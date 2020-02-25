@@ -21,6 +21,7 @@ public class SimpleList
     }
     
     //adds a parameter into the list
+    //need to add index
     public void add(int par) 
     {
         int i;
