@@ -14,17 +14,19 @@ public class SimpleList
     private int[] list, list1;
     private int count, num;
     
-    //creates a new integer array with 10 elements and 
-    //set count to 0
+    /* Creates a new integer array with 10 elements and 
+     * set count to 0.
+     */
     public SimpleList() 
     {
         list = new int[10];
         count = 0;
     }
     
-    //Adds a parameter into the list.
-    //Increase array size by 50% of array
-    //is full.
+    /* Adds a parameter into the list.
+     * Increase array size by 50% of array
+     * is full.
+     */
     public void add(int par) 
     {
         if(count == list.length)
@@ -55,9 +57,10 @@ public class SimpleList
         
     }
     
-    //Removes a parameter from the list.
-    //Reduces the array size by 25% if then is at least 25%
-    //of empty space in the array
+    /* Removes a parameter from the list.
+     * Reduces the array size by 25% if then is at least 25%
+     * of empty space in the array
+     */
     public void remove(int par) 
     {
         
@@ -100,8 +103,9 @@ public class SimpleList
         return str;
     }
 
-    //returns the location of the parameter
-    //returns -1 is parameter does not exist
+    /* returns the location of the parameter
+     * returns -1 is parameter does not exist
+     */
     public int search(int par) 
     {
         for(num = 0; num < count; num++)
@@ -114,8 +118,9 @@ public class SimpleList
         return -1;
     }
     
-    //Adds parameter to the end of the array
-    //Increases array size by 50% if array is full
+    /*Adds parameter to the end of the array
+    *Increases array size by 50% if array is full
+    */
     public void append(int par)
     {
         if(count == list.length)
@@ -140,8 +145,9 @@ public class SimpleList
         count++;
     }
     
-    //Returns first element in the array
-    //Returns -1 if array is empty
+    /*Returns first element in the array
+    *Returns -1 if array is empty
+    */
     public int first()
     {
         if(isEmpty() == false)
@@ -153,8 +159,9 @@ public class SimpleList
         
     }
     
-    //Returns last element of array
-    //Returns -1 if array is empty
+    /*Returns last element of array
+    *Returns -1 if array is empty
+    */
     public int last()
     {
         if(isEmpty() == true)
@@ -172,8 +179,9 @@ public class SimpleList
         return list.length;
     }
     
-    //checks if array is empty. Returns false
-    //if array is not empty, else returns true.
+    /*checks if array is empty. Returns false
+    *if array is not empty, else returns true.
+    */
     public boolean isEmpty()
     {
         for(num = 0; num < count; num++)
