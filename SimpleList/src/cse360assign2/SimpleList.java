@@ -6,6 +6,7 @@ package cse360assign2;
  *    @description  This program contains methods to create, add, 
  *                  remove, count, get first, last element, and 
  *                  display a list of integers
+ *    @link         https://github.com/04kohb/CSE360/tree/master/SimpleList/src/cse360assign2
  */
 
 public class SimpleList 
