@@ -28,7 +28,7 @@ public class SimpleList
     {
         if(count == list.length)
         {
-            list1 = new int[list.length/2+list.length];
+            list1 = new int[list.length / 2 + list.length];
             
             for(num = 0; num < count; num++)
             {
@@ -119,7 +119,7 @@ public class SimpleList
     {
         if(count == list.length)
         {
-            list1 = new int[list.length/2 + list.length];
+            list1 = new int[list.length / 2 + list.length];
             
             for(num = 0; num < count; num++)
             {
@@ -156,12 +156,12 @@ public class SimpleList
     //Returns -1 if array is empty
     public int last()
     {
-        if(isEmpty()==true)
+        if(isEmpty() == true)
         {
             return -1;
         }
         else
-            return list[count-1];
+            return list[count - 1];
         
     }
     
