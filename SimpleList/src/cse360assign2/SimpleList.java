@@ -9,8 +9,7 @@ package cse360assign2;
  *    @link         https://github.com/04kohb/CSE360/tree/master/SimpleList/src/cse360assign2
  */
 
-public class SimpleList 
-{
+public class SimpleList {
     private int[] list, list1;
     private int count, num;
     
