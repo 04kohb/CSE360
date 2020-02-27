@@ -2,15 +2,15 @@ package cse360assign2;
 /**
  *    @author       Boon Yeow Koh 
  *    @classID      120
- *    @assignment   1
+ *    @assignment   2
  *    @description  This program contains methods to create, add, 
  *                  remove, count, and display a list of integers
  */
 
 public class SimpleList 
 {
-    private int[] list;
-    private int count;
+    private int[] list, list1;
+    private int count, num;
     
     //creates a new integer array with 10 elements and 
     //set count to 0
@@ -20,20 +20,32 @@ public class SimpleList
         count = 0;
     }
     
-    //adds a parameter into the list
-    //need to add index
+    //Adds a parameter into the list.
+    //Increase array size by 50% of array
+    //is full.
     public void add(int par) 
     {
-        int i;
-        if(list == null)
+        if(count == list.length)
+        {
+            list1 = new int[list.length/2+list.length];
+            
+            for(num = 0; num < count; num++)
+            {
+                list1[num] = list[num];
+            }
+            list = list1;
+        }
+        
+        
+        if(isEmpty() == true)
         {
             list[0] = par;
         }
         else
         {
-            for(i = count; i > 0; i--)
+            for(num = count; num > 0; num--)
             {
-                list[i]=list[i-1];
+                list[num] = list[num-1];
             }
             list[0] = par;
         }
@@ -41,51 +53,134 @@ public class SimpleList
         
     }
     
-    //removes a parameter from the list
+    //Removes a parameter from the list.
+    //Reduces the array size by 25% if then is at least 25%
+    //of empty space in the array
     public void remove(int par) 
     {
-        int i;
+        
+        if(list.length - count > list.length/4)
+        {
+            list1 = new int[list.length-list.length/4];
+            
+            for(num = 0; num < count; num++)
+            {
+                list1[num] = list[num];
+            }
+            list = list1;
+        }
+        
         if(search(par) != -1)
         {
             count--;
-            for(i = search(par); i < count; i++)
+            for(num = search(par); num < count; num++)
             {
-                list[i]=list[i+1];
+                list[num] = list[num+1];
             }   
         }
     }
     
-    //returns number of elements in the list
+    //Returns number of elements in the list
     public int count() 
     {
         return count;
     }
     
-    // returns a string of the list
+    //Returns a string of the list
     public String toString()
     {
-        int i;
         String str = list[0]+"";
       
-        for (i = 1; i < count; i++)
+        for (num = 1; num < count; num++)
         {
-           str = str+" "+list[i];
+           str = str + " "+ list[num];
         }
         return str;
     }
 
     //returns the location of the parameter
+    //returns -1 is parameter does not exist
     public int search(int par) 
     {
-        int i;
-        for(i = 0; i < count; i++)
+        for(num = 0; num < count; num++)
         {
-            if(list[i]==par)
+            if(list[num] == par)
             {
-                return i;
+                return num;
             }
-               
         }
         return -1;
+    }
+    
+    //Adds parameter to the end of the array
+    //Increases array size by 50% if array is full
+    public void append(int par)
+    {
+        if(count == list.length)
+        {
+            list1 = new int[list.length/2 + list.length];
+            
+            for(num = 0; num < count; num++)
+            {
+                list1[num] = list[num];
+            }
+            list = list1;
+        }
+        
+        if(isEmpty() == true)
+        {
+            list[0] = par;
+        }
+        else
+        {
+            list[count] = par;
+        }
+        count++;
+    }
+    
+    //Returns first element in the array
+    //Returns -1 if array is empty
+    public int first()
+    {
+        if(isEmpty() == false)
+        {
+            return list[0];
+        }
+        else
+            return -1;
+        
+    }
+    
+    //Returns last element of array
+    //Returns -1 if array is empty
+    public int last()
+    {
+        if(isEmpty()==true)
+        {
+            return -1;
+        }
+        else
+            return list[count-1];
+        
+    }
+    
+    //returns the size of the current array
+    public int size()
+    {
+        return list.length;
+    }
+    
+    //checks if array is empty. Returns false
+    //if array is not empty, else returns true.
+    public boolean isEmpty()
+    {
+        for(num = 0; num < count; num++)
+        {
+            if(list[num] != 0)
+            {
+                return false;
+            }
+        }
+        return true;
     }
 }
