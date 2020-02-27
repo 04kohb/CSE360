@@ -4,7 +4,8 @@ package cse360assign2;
  *    @classID      120
  *    @assignment   2
  *    @description  This program contains methods to create, add, 
- *                  remove, count, and display a list of integers
+ *                  remove, count, get first, last element, and 
+ *                  display a list of integers
  */
 
 public class SimpleList 
